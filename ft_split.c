@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char *strtrim_head(char const *s, char const *set)
 {
   if (!s || !set)
@@ -18,26 +20,25 @@ unsigned int  count_char(char const *s, char c)
 char **ft_split(char const *s, char c)
 {
   char  *pt;
-  char  *buff;
   char  **split;
   size_t  i;
 
   i = 0;
   s = ft_strtrim(s, &c);
   split = (char **)ft_calloc((count_char(s, c) + 1), sizeof(char *) + 1);
-  if (split == NULL)
-    return (NULL)
+  if (!split)
+    return (NULL);
   pt = ft_strchr(s, c);
-  while (pt && split)
+  while (pt)
   {
-    buff = ft_substr(s, 0, pt - s);
-    if ()
-      split[i++] = ft_substr(s, 0, pt - s);
+    split[i++] = ft_substr(s, 0, pt - s);
+    if (!split[i - 1])
+      return (NULL);
     pt = strtrim_head(pt, &c);
     s = pt;
     pt = ft_strchr(s, c);
   }
-  split[i] = ft_strdup(s);
+  split[i] = (char *)s;
   return (split);
 }
 

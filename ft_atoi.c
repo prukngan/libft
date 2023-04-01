@@ -20,7 +20,7 @@ int		ft_atoi(const char *c)
   return (neg * res);
 }
 
-int main(void)
-{
-  printf("result = %d", ft_atoi("\r\f\v\n-12345"));
-}
+// int main(void)
+// {
+//   printf("result = %d", ft_atoi("\r\f\v\n-12345"));
+// }

@@ -14,7 +14,6 @@ NAME = libft.a
 SRCS	=	ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
-			ft_memccpy.c \
 			ft_memmove.c \
 			ft_memchr.c \
 			ft_memcmp.c \
@@ -41,12 +40,11 @@ SRCS	=	ft_memset.c \
 			ft_split.c \
 			ft_itoa.c \
 			ft_strmapi.c \
-			ft_strcmp.c \
-			ft_striteri \
-			ft_putchar_ fd \
-			ft_putstr_fd \
-			ft_putendl_fd \
-			ft_putnbr_fd \
+			ft_striteri.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
 
 SRCS_BNS	= 	ft_lstnew.c \
 	  			ft_lstadd_front.c \
@@ -58,7 +56,7 @@ SRCS_BNS	= 	ft_lstnew.c \
 	  			ft_lstiter.c \
 	  			ft_lstmap.c
 
-OBJS = &(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 OBJS_BNS = $(SRCS_BNS:.c=.o)
 
