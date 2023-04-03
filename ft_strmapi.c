@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     char            *buff;
     unsigned int    i;
@@ -14,4 +14,5 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
         buff[i] = f(i, s[i]);
         i++;
     }
+    return (buff);
 }
