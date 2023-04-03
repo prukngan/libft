@@ -18,16 +18,16 @@ void *ft_memmove(void *dest, const void *src, size_t len)
   return (dest);
 }
 
-int main()
-{
-  char str[] = "Hello World";
-  char *src = str;
-  char *dest = &str[2];
+// int main()
+// {
+//   char str[] = "Hello World";
+//   char *src = str;
+//   char *dest = &str[2];
 
-  printf("char dest: %c\n", *dest);
-  ft_memmove(dest, src, 11);
-  //printf("Result: %s\n", str);
-  printf("str dest: %s\n", dest);
+//   printf("char dest: %c\n", *dest);
+//   ft_memmove(dest, src, 11);
+//   //printf("Result: %s\n", str);
+//   printf("str dest: %s\n", dest);
 
-  return 0;
-}
+//   return 0;
+// }

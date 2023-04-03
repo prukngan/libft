@@ -76,6 +76,7 @@ clean:
 	rm -f $(OBJS) $(OBJS_BNS)
 fclean: clean
 	rm -f $(NAME)
+
 re : fclean all
 
 .PHONY: all bonus clean fclean re
