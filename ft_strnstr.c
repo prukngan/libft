@@ -2,15 +2,15 @@
 
 char	*ft_strnstr(const char *str, const char *sub, size_t n)
 {
-  size_t len;
+  size_t  len;
 
-  len = ft_strlen((char*)sub);
+  len = ft_strlen(sub);
   if (len == 0)
-    return (char *)str;
-  while (n-- > 0)
+    return ((char *)str);
+  while (n-- > len)
   {  
-    if (*str == *sub && !ft_strncmp(str, sub, len))
-      return ((char*)str);
+    if (ft_strncmp(str, sub, len) == 0)
+      return ((char *)str);
     str++;
   }
   return (NULL);

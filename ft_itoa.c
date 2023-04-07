@@ -12,53 +12,48 @@
 
 #include "libft.h"
 
-int	abs_plus(char *buff, int n)
-{
-	if (n < 0)
-	{
-		*buff = '-';
-		n = -n;
-	}
-	return (n);
-}
-
-int	intlen(int n)
+size_t	intlen(long num)
 {
 	size_t	len;
 
 	len = 1;
-	if (n < 0)
+	if (num < 0)
 		len++;
-	while (n /= 10)
+	while (num /= 10)
 		len++;
 	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*buff;
-	char	*pt;
+	char	*str;
+	long	num;
 	size_t	len;
 
-	len = intlen(n);
-	buff = (char *)malloc(len + 1);
-	if (!buff)
+	num = n;
+	len = intlen(num);
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (NULL);
-	pt = buff + len;
-	n = abs_plus(buff, n);
-	*pt = '\0';
-	while (n)
+	*(str + len--) = '\0';
+	if (num == 0)
+		*str = '0';
+	else if (num < 0)
 	{
-		pt--;
-		*pt = n % 10 + 48;
-		n /= 10;
+		num = -num;
+		*str = '-';
 	}
-	return (buff);
+	while (num)
+	{
+		*(str + len--) = (num % 10) + 48;
+		num /= 10;
+	}
+	return (str);
 }
 
 // int main()
 // {
-//   char  *str = ft_itoa(100);
+//   char  *str = ft_itoa(0);
 
 //   printf("str = %s\n", str);
 // }

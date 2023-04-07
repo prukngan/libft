@@ -6,7 +6,7 @@
 # include <inttypes.h>
 # include <unistd.h>
 
-//#include <stdio.h>
+#include <stdio.h>
 
 int     ft_isalpha(int arg);
 int     ft_isdigit(int arg);
@@ -14,6 +14,7 @@ int     ft_isalnum(int arg);
 int     ft_isascii(int arg);
 int     ft_isprint(int arg);
 size_t  ft_strlen(const char* arg);
+char    *ft_strdup(const char *s);
 void    *ft_memset(void *dest, int src, size_t lens);
 void    ft_bzero(void *s, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t lens);

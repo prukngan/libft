@@ -2,18 +2,18 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    if (!n)
-        return (0);
-    while (n > 0 && ((unsigned char *)s1 == (unsigned char *)s2))
-    {
-        s1++;
-        s2++;
-        n--;
-    }
-    return ((unsigned char *)s1 - (unsigned char *)s2);
-}
+    char    *buff1;
+    char    *buff2;
+    size_t  i;
 
-// int main()
-// {
-//     ft_memcmp("1234", "1234", 4);
-// }
+    buff1 = (char *)s1;
+    buff2 = (char *)s2;
+    i = 0;
+    while (i < n)
+    {
+        if (buff1[i] != buff2[i])
+            return ((unsigned char)buff1[i] - (unsigned char)buff2[i]);
+        i++;
+    }
+    return (0);
+}

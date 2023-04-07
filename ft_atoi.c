@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 22:02:11 by prukngan          #+#    #+#             */
+/*   Updated: 2023/04/06 22:02:17 by prukngan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int		ft_atoi(const char *c)
@@ -7,8 +19,8 @@ int		ft_atoi(const char *c)
 
   res = 0;
   neg = 1;
-  while (((*c >= 9 && *c <= 13) || *c == ' ')
-        || (*c == '+' && ft_isdigit(*c + 1)))
+  while (((*c >= 9 && *c <= 13) || *c == ' ') 
+        || (*c == '+' && ft_isdigit(*(c + 1))))
     c++;
   if (*c == '-')
   {
@@ -19,8 +31,3 @@ int		ft_atoi(const char *c)
     res = (*c++ - 48) + (res * 10);
   return (neg * res);
 }
-
-// int main(void)
-// {
-//   printf("result = %d", ft_atoi("\r\f\v\n-12345"));
-// }

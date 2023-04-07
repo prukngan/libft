@@ -1,58 +1,55 @@
 #include "libft.h"
 
-char *strtrim_head(char const *s, char const *set)
+char  *clean_str(char const *s, char c)
 {
-  if (!s || !set)
-    return (NULL);
-  while (ft_strchr(set, *s) && *s)
-      s++;
-  return ((char *)s);
-}
-
-unsigned int  count_char(char const *s, char c)
-{
-  if (!s)
-    return (-1);
-  s = strtrim_head(s, &c);
-  return (1 + count_char(ft_strchr(s, c), c));
-}
-
-char **ft_split(char const *s, char c)
-{
-  char  *pt;
-  char  **split;
+  char  *str;
+  char  *buff;
   size_t  i;
 
   i = 0;
-  s = ft_strtrim(s, &c);
-  split = (char **)ft_calloc((count_char(s, c) + 1), sizeof(char *) + 1);
-  if (!split)
+  buff = ft_strtrim(s, &c);
+  str = (char *)malloc(ft_strlen(buff));
+  if (!str || !buff)
     return (NULL);
-  pt = ft_strchr(s, c);
-  while (pt)
+  while (buff[i])
   {
-    split[i++] = ft_substr(s, 0, pt - s);
-    if (!split[i - 1])
-      return (NULL);
-    pt = strtrim_head(pt, &c);
-    s = pt;
-    pt = ft_strchr(s, c);
+    str[i] = buff[i];
+    i++;
+    if (buff[i] == c)
+    {
+      str[i++] = 'x';
+      while (buff[i] == c)
+      {
+        str[i] = buff[i];
+        i++;
+      }
+    }
   }
-  split[i] = (char *)s;
+  return (str);
+}
+
+char  **ft_split(char const *s, char c)
+{
+  char  *str;
+  char  **split;
+  size_t  len;
+  size_t  i;
+
+  str = clean_str(s, c);
+  if (!s || !str)
+    return (NULL);
+  i = 0;
+  len = ft_strlen(str);
+  split = (char **)malloc(sizeof(char *) * len + 1);
+  while (i < len)
+  {
+    split
+  }
+  split[i] = NULL;
   return (split);
 }
 
-// int main()
-// {
-//   char *str = "xaaxbxxccxx";
-//   char *s1 = ft_strchr("\0", 0);
-//   char *s2 = strchr("\0", 0);
-//   char **split = ft_split("xaaxbxxccxx", 'x');
-  
-//   printf("str = %s\n", str);
-//   while (*split)
-//   {  
-//     printf("split = %s\n", *split);
-//     split++;
-//   }
-// }
+int main()
+{
+  printf("%s", clean_str("hellozzworld", 'z'));
+}
