@@ -21,7 +21,7 @@ int  num_word(char const *s, char c)
 char  **ft_split(char const *s, char c)
 {
   char **split;
-  char *pt;
+  int  len;
   int  i;
   int  num;
   
@@ -34,14 +34,14 @@ char  **ft_split(char const *s, char c)
   {
     while (*s == c)
       s++;
-    pt = (char *)s;
-    while (*pt != c && *pt)
-      pt++;
-    split[i] = ft_substr(s, 0, pt - s);
+    len = 0;
+    while (s[len] != c && s[len])
+      len++;
+    split[i] = ft_substr(s, 0, len);
     i++;
-    s = pt;
+    s += len;
   }
-  split[num] = NULL;
+  split[i] = NULL;
   return (split);
 }
 
