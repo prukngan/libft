@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:23 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:23 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:02:13 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (dest[i] && i < size)
@@ -30,6 +30,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[i] = '\0';
 	while (src[i - j])
 		i++;
-	
-  return (j + i - j);
+	return (j + i - j);
 }

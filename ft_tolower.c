@@ -6,16 +6,15 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:24 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:24 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:09:43 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;
-  
 	return (c);
 }

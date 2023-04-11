@@ -6,16 +6,15 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:24 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:24 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:10:09 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;
-  
 	return (c);
 }

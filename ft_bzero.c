@@ -6,14 +6,14 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:20 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:20 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:18:26 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-  while(n > 0)
-    ((unsigned char*)s)[--n] = 0;
+	while (n > 0)
+		((unsigned char *)s)[--n] = 0;
 }

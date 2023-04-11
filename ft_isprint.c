@@ -6,15 +6,15 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:21 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:21 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:55:52 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int arg)
+int	ft_isprint(int arg)
 {
-  if (arg >= 32 && arg <= 126)
-    return (1);
-  return (0);
+	if (arg >= 32 && arg <= 126)
+		return (1);
+	return (0);
 }
