@@ -6,7 +6,7 @@
 /*   By: prukngan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:59:21 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 04:40:21 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:35:13 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ size_t	intlen(long num)
 	len = 1;
 	if (num < 0)
 		len++;
-	while (num /= 10)
+	num /= 10;
+	while (num)
+	{
+		num /= 10;
 		len++;
+	}
 	return (len);
 }
 
