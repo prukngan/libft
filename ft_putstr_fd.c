@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:23 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 18:53:46 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:40:29 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
+	if (s != NULL)
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		while (*s)
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
 	}
 }

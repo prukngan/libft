@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:21 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 18:36:02 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:48:06 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	else
 		*lst = new;
-	new->next = NULL;
 }

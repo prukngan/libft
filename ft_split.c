@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:23 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 18:56:59 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:32:53 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ char	**ft_split(char const *s, char c)
 	num = num_word(s, c);
 	i = 0;
 	split = (char **)malloc(sizeof(char *) * (num + 1));
-	if (!split && num == 0)
+	if (split == NULL)
+		return (0);
+	if (s == NULL)
 		return (NULL);
 	while (i < num)
 	{

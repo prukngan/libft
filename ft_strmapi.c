@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:23 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 19:05:48 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:37:20 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	str = (char *)malloc(ft_strlen(s) + 1);
-	if (!str && !s)
+	if (str == NULL)
 		return (NULL);
 	while (s[i])
 	{

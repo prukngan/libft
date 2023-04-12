@@ -6,7 +6,7 @@
 /*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:40:21 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 18:39:00 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:42:53 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst)
+	if (lst != NULL && del != NULL)
 	{
-		(*del)(lst->content);
-		free(lst);
+		if (lst)
+		{
+			(*del)(lst->content);
+			free(lst);
+		}
 	}
 }
