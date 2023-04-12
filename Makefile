@@ -6,7 +6,7 @@
 #    By: prukngan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 17:15:24 by prukngan          #+#    #+#              #
-#    Updated: 2023/04/08 04:40:20 by prukngan         ###   ########.fr        #
+#    Updated: 2023/04/12 18:01:52 by prukngan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,4 +81,4 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY:	NAME all clean fclean re
+.PHONY:	all clean fclean re bonus
