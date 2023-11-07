@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prukngan <phongsathon.rak2003@gmail.com>   +#+  +:+       +#+        */
+/*   By: prukngan <phongsathon.rak2003@gmail.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 22:02:11 by prukngan          #+#    #+#             */
-/*   Updated: 2023/04/08 15:16:50 by prukngan         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:08:13 by prukngan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_isdigit(int arg)
+{
+	if (arg >= '0' && arg <= '9')
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *c)
 {
