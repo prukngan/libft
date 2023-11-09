@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: prukngan <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: prukngan <phongsathon.rak2003@gmail.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 17:15:24 by prukngan          #+#    #+#              #
-#    Updated: 2023/04/12 18:01:52 by prukngan         ###   ########.fr        #
+#    Updated: 2023/11/09 21:44:24 by prukngan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,8 @@ SRCS_BNS	= 	ft_lstnew.c \
 	  			ft_lstiter.c \
 	  			ft_lstmap.c
 
+OBJS_DIR	= output
+
 OBJS		= $(SRCS:.c=.o)
 
 OBJS_BNS	= $(SRCS_BNS:.c=.o)
@@ -64,20 +66,23 @@ OBJS_BNS	= $(SRCS_BNS:.c=.o)
 FLAGS		= -Wall -Wextra -Werror
 
 $(NAME):
-		gcc $(FLAGS) -c $(SRCS) -I./
-		ar rc $(NAME) $(OBJS)
+		@mkdir $(OBJS_DIR)
+		@gcc $(FLAGS) -c $(SRCS) -I./
+		@ar rc $(NAME) $(OBJS)
+		@mv $(OBJS) $(OBJS_DIR)
 
 all:	$(NAME)
 
 bonus:	$(NAME)
-		gcc $(FLAGS) -c $(SRCS_BNS) -I./
-		ar rc $(NAME) $(OBJS_BNS)
+		@gcc $(FLAGS) -c $(SRCS_BNS) -I./
+		@ar rc $(NAME) $(OBJS_BNS)
+		@mv $(OBJS_BNS) $(OBJS_DIR)
 
 clean:
-		rm -f $(OBJS) $(OBJS_BNS)
+		@rm -rf $(OBJS_DIR)
 
 fclean:	clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re:	fclean all
 
